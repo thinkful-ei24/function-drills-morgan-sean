@@ -3,3 +3,7 @@ function printName(name, age) {
 }
 
 printName("Sean", 21);
+
+const createGreeting = function() {
+  console.log('Hi my name is Morgan');
+};
