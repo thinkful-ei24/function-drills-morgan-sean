@@ -15,6 +15,9 @@ const createGreeting = function(name, age) {
   if (name === undefined || age === undefined) {
     throw new Error('Arguments not valid');
   }
+  if (typeof age != "number") {
+    throw new TypeError("Age must be a number");
+  }
   const birthYear = getYearOfBirth(age);
   return `Hi, my name is ${name} and I'm ${age} years old.\nI was born in ${birthYear}`;
 };
