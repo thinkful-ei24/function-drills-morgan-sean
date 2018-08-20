@@ -82,7 +82,46 @@ const decode = function(sentence) {
   }, '');
 };
 
+const constructMonthMap = function() {
+  const months = [];
+  let dict = {};
+  for(const [i, month] of months.entries()) {
+    dict[month] = i;
+  }
+  return dict;
+};
+
 console.log(decodeWord('mouse'));
 console.log(decodeWord('cycle'));
 
 console.log(decode('craft block argon meter bells brown croon droop'));
+
+const daysInMonth = function(monthStr, leapYear=false) {
+  let days = 0;
+  switch(monthStr) {
+    case 'January':
+    case 'March':
+    case 'May':
+    case 'July':
+    case 'August':
+    case 'October':
+    case 'December':
+      days = 31;
+      break;
+    case 'April':
+    case 'June':
+    case 'September':
+    case 'November':
+      days = 30;
+    case 'February':
+      if(leapYear) {
+        days = 29;
+      } else {
+        days = 28;
+      }
+      break;
+  }
+  return `${monthStr} has ${days} days`
+}
+
+console.log(daysInMonth("December"));
