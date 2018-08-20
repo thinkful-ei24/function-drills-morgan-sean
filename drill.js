@@ -5,7 +5,8 @@ function printName(name, age) {
 printName("Sean", 21);
 
 const createGreeting = function(name, age) {
-  return `Hi, my name is ${name} and I'm ${age} years old`;
+  const birthYear = 2018 - age;
+  return `Hi, my name is ${name} and I'm ${age} years old.\nI was born in ${birthYear}`;
 };
 
 console.log(createGreeting("Morgan", 22))
