@@ -5,6 +5,9 @@ function printName(name, age) {
 printName("Sean", 21);
 
 const getYearOfBirth = function(age) {
+  if(age < 0) {
+    throw new Error("Age cannot be negative")
+  }
   return (new Date()).getFullYear() - age;
 };
 
@@ -13,4 +16,9 @@ const createGreeting = function(name, age) {
   return `Hi, my name is ${name} and I'm ${age} years old.\nI was born in ${birthYear}`;
 };
 
-console.log(createGreeting("Morgan", 22));
+try {
+  const response = createGreeting("Morgan", 22);
+  console.log(response);
+} catch(err) {
+  console.log(err);
+}
