@@ -2,7 +2,7 @@ function printName(name, age) {
   console.log(`Hi, my name is ${name} and I'm ${age} years old`);
 }
 
-printName("Sean", 21);
+// printName("Sean", 21);
 
 const getYearOfBirth = function(age) {
   if(age < 0) {
@@ -41,20 +41,20 @@ const beyond = function(num) {
   return;
 };
 
-try {
-  console.log( beyond(Infinity));
-} catch(err) {
-  console.log(err);
-}
+// try {
+//   console.log( beyond(Infinity));
+// } catch(err) {
+//   console.log(err);
+// }
 
 const jediName = function(first, last) {
   return last.slice(0, 3) + first.slice(0, 2);
 };
 
-console.log(jediName('Beyonce', 'Knowles'));
-console.log(jediName('Jet', 'Li'));
-console.log(jediName('Le', 'Li'));
-console.log(jediName('ndksaklndsnkalda', 'A'));
+// console.log(jediName('Beyonce', 'Knowles'));
+// console.log(jediName('Jet', 'Li'));
+// console.log(jediName('Le', 'Li'));
+// console.log(jediName('ndksaklndsnkalda', 'A'));
 
 
 
@@ -91,10 +91,10 @@ const constructMonthMap = function() {
   return dict;
 };
 
-console.log(decodeWord('mouse'));
-console.log(decodeWord('cycle'));
+// console.log(decodeWord('mouse'));
+// console.log(decodeWord('cycle'));
 
-console.log(decode('craft block argon meter bells brown croon droop'));
+// console.log(decode('craft block argon meter bells brown croon droop'));
 
 const daysInMonth = function(monthStr, leapYear=false) {
   let days = 0;
@@ -121,7 +121,42 @@ const daysInMonth = function(monthStr, leapYear=false) {
       }
       break;
   }
-  return `${monthStr} has ${days} days`
-}
+  return `${monthStr} has ${days} days`;
+};
 
-console.log(daysInMonth("December"));
+// console.log(daysInMonth("December"));
+
+
+const rockPaperScissors = function(handSign) {
+  if (handSign !== 1 && handSign !== 2 && handSign !== 3) {
+    throw new Error('Invalid argument. Please enter a number between 1 and 3.');
+  }
+
+  const computerMove = Math.floor(Math.random() * 3) + 1;
+  console.log(`The computer played: ${computerMove}`);
+  if (handSign === computerMove) return 'Tie!';
+  switch (handSign) {
+  // Case 1: beats 3, loses to 2
+    case 1:
+      if (computerMove === 3) return 'You win!';
+      else return 'You lose!';
+  // Case 2: beats 1, loses to 3
+    case 2:
+      if (computerMove === 1) return 'You win!';
+      else return 'You lose!';  
+    // Case 3: beats 2, loses to 1
+    case 3:
+      if (computerMove === 2) return 'You win!';
+      else return 'You lose!';
+  }
+};
+
+try {
+  console.log(rockPaperScissors(1)); // Rock
+  console.log(rockPaperScissors(2)); // Paper
+  console.log(rockPaperScissors(3)); // Scissors
+  // console.log(rockPaperScissors(5));
+}
+catch(e) {
+  console.log(e);
+}
