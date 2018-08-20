@@ -55,3 +55,34 @@ console.log(jediName('Beyonce', 'Knowles'));
 console.log(jediName('Jet', 'Li'));
 console.log(jediName('Le', 'Li'));
 console.log(jediName('ndksaklndsnkalda', 'A'));
+
+
+
+const decodeWord = function(codeWord) {
+  switch(codeWord[0]) {
+    case 'a':
+      return codeWord[1];
+    case 'b':
+      return codeWord[2];
+    case 'c':
+      return codeWord[3];
+    case 'd':
+      return codeWord[4];
+    default:
+      return ' ';
+  }
+};
+
+const decode = function(sentence) {
+  // split to an array of words
+  let words = sentence.split(' ');
+  // decodeWord on each word
+  return words.reduce((message, word) => {
+    return message + decodeWord(word);
+  }, '');
+};
+
+console.log(decodeWord('mouse'));
+console.log(decodeWord('cycle'));
+
+console.log(decode('craft block argon meter bells brown croon droop'));
