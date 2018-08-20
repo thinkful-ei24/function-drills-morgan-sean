@@ -25,3 +25,12 @@ try {
 } catch(err) {
   console.log(err);
 }
+
+const jediName = function(first, last) {
+  return last.slice(0, 3) + first.slice(0, 2);
+};
+
+console.log(jediName('Beyonce', 'Knowles'));
+console.log(jediName('Jet', 'Li'));
+console.log(jediName('Le', 'Li'));
+console.log(jediName('ndksaklndsnkalda', 'A'));
