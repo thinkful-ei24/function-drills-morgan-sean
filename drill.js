@@ -22,9 +22,27 @@ const createGreeting = function(name, age) {
   return `Hi, my name is ${name} and I'm ${age} years old.\nI was born in ${birthYear}`;
 };
 
+const beyond = function(num) {
+  if(num === Infinity) {
+    console.log("And beyond");
+  } else {
+    // finite numbers
+    if(num > 0) {
+      // +
+      console.log("To infinity");
+    } else if(num < 0) {
+      // -
+      console.log("To negative infinity");
+    } else {
+      // 0
+      console.log("Staying home");
+    }
+  }
+  return;
+};
+
 try {
-  const response = createGreeting("Morgan", 22);
-  console.log(response);
+  console.log( beyond(Infinity));
 } catch(err) {
   console.log(err);
 }
