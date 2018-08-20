@@ -4,6 +4,8 @@ function printName(name, age) {
 
 printName("Sean", 21);
 
-const createGreeting = function() {
-  console.log('Hi my name is Morgan');
+const createGreeting = function(name, age) {
+  return `Hi, my name is ${name} and I'm ${age} years old`;
 };
+
+console.log(createGreeting("Morgan", 22))
